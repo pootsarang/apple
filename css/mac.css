@@ -321,8 +321,7 @@ a {
   #header-applewatch,
   #header-ipad,
   #header-iphone,
-  #header-mac,
-  #header-store {
+  #header-mac {
     display: none !important;
   }
 
@@ -335,4 +334,8 @@ a {
   .header-nav p {
     margin: 0 !important;                      /* 페이지별 여백 무력화 */
   }
+   #header-store{
+    margin-left: 32vw;
+  }
 }
+

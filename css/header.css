@@ -33,18 +33,27 @@
   font-size: clamp(30px, 3vw, 60px);
 }
 
+/* === 530px 이하: 일부 항목 숨기고 3개만 균등 배치 === */
 @media (max-width: 530px) {
   #header-airpods,
   #header-applewatch,
   #header-ipad,
   #header-iphone,
-  #header-mac,
-  #header-store {
+  #header-mac {
     display: none !important;
   }
 
   .header-nav {
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between !important; /* space-around도 가능 */
+    gap: 0 !important;                         /* 남아있는 gap 제거 */
+    padding: 8px 16px;
+  }
+
+  .header-nav p {
+    margin: 0 !important;                      /* 페이지별 여백 무력화 */
+  }
+   #header-store{
+    margin-left: 32vw;
   }
 }
+

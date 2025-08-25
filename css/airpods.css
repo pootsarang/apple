@@ -59,8 +59,7 @@ a {
   #header-applewatch,
   #header-ipad,
   #header-iphone,
-  #header-mac,
-  #header-store {
+  #header-mac{
     display: none !important;
   }
 
