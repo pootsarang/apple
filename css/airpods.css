@@ -290,7 +290,3 @@ a {
 @media (max-width: 420px){
   .f-col{ width: 100%; }
 }
-
-p{
-  display: block;
-}
