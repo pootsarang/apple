@@ -6,16 +6,6 @@
   width: 100%;
 }
 
-.header-nav {
-  display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
-  width: 100%;
-  margin: 1vw auto;
-  font-size: clamp(15px, 1.2vw, 22px);
-  font-weight: 450;
-  white-space: nowrap;
-}
 
 .apple-img-group {
   width: 100%;
@@ -135,6 +125,18 @@
 @media (max-width: 420px){
   .f-col{ width: 100%; }
 }
+
+.header-nav {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  width: 100%;
+  margin: 1vw auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
 
 /* === 530px 이하: 일부 항목 숨기고 3개만 균등 배치 === */
 @media (max-width: 530px) {
