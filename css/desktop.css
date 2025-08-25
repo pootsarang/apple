@@ -1,0 +1,238 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+ul { 
+    list-style: none; 
+}
+a { 
+    text-decoration: none; 
+    color: #333; 
+}
+
+
+.header-nav {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  width: 100%;
+  margin: 1vw auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+/* 섹션 */
+.lineup-desk {
+  background: #f6f7f8;
+  padding: 4vw 0 6vw;
+}
+
+.lineup-desk .inner {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.ld-head {
+  position: relative;
+}
+
+.ld-title {
+  margin: 0 0 1.8vw;
+  font-size: clamp(22px, 3.2vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ld-all {
+  position: absolute;
+  right: 0;
+  top: .6vw;
+  font-size: clamp(12px, 1.1vw, 16px);
+  color: #0a84ff;
+  text-decoration: none;
+}
+
+/* 탭 */
+.ld-tabs {
+  margin: 1vw 0 3vw;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+.ld-tabs li {
+  display: inline-block;
+  margin-right: .8vw;
+  font-size: 14px;
+}
+.ld-tabs a {
+  display: inline-block;
+  padding: .7vw 1.4vw;
+  border-radius: 999px;
+  background: #e9ecef;
+  color: #111;
+  text-decoration: none;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 700;
+}
+.ld-tabs a.is-active {
+  background: #111;
+  color: #fff;
+}
+
+/* 카드 4열 */
+.ld-list {
+  font-size: 0; /* inline-block 간격 제거 */
+}
+.ld-item {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  width: 24%;
+  box-sizing: border-box;
+  padding-right: 1.33%; /* 3칸 간격 균등 */
+  text-align: center;
+}
+.ld-item:nth-child(4n) { padding-right: 0; }
+
+.ld-img {
+  /* 고정값 대신 반응형 높이: 화면에 따라 160~280px 사이 */
+  height: clamp(160px, 18vw, 280px);
+  display: flex;
+  align-items: flex-end;     /* ← 아래 기준선으로 맞춤(미니처럼 작은 제품도 바닥선에 딱) */
+  justify-content: center;
+  padding-bottom: 8px;       /* 살짝 여백 (선택) */
+}
+
+/* 원본 비율 유지 + 잘리지 않게 */
+.ld-img img {
+  max-height: 100%;
+  max-width: 88%;
+  object-fit: contain;
+  display: block;
+}
+/* 점 네비 */
+.ld-dots {
+  margin: 1vw 0 1.2vw;
+  padding: 0;
+  list-style: none;
+}
+.ld-dots li {
+  display: inline-block;
+  width: .5vw;
+  height: .5vw;
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 50%;
+  background: #c8c8ce;
+  margin: 0 .25vw;
+}
+.ld-dots li.on { background: #2c2c2c; }
+
+/* 카드 텍스트 */
+.ld-name {
+  margin: .6vw 0 0;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 800;
+}
+.ld-sub {
+  margin: .2vw 0 0;
+  color: #6b6f75;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 700;
+}
+.ld-desc {
+  margin: .8vw 0 0;
+  color: #333;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.6;
+}
+.ld-price {
+  margin: .9vw 0 0;
+  font-weight: 800;
+  font-size: clamp(13px, 1.05vw, 16px);
+}
+
+/* 버튼 */
+.ld-cta { margin-top: 1.1vw; }
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.btn.primary {
+  background: #0a84ff;
+  color: #fff;
+  padding: .8vw 1.4vw;
+  font-size: clamp(12px, 1.05vw, 14px);
+  font-weight: 700;
+}
+.btn.link {
+  margin-left: .7vw;
+  color: #0a84ff;
+  padding: .8vw 0;
+  font-size: clamp(12px, 1.05vw, 14px);
+  font-weight: 700;
+}
+
+/* 구분선 */
+.ld-sep {
+  margin: 2.2vw 0 1.6vw;
+  border: none;
+  border-top: 1px solid #dfe2e5;
+  width: 100%;
+}
+
+/* 스펙 4열 */
+.ld-specs {
+  font-size: 0;
+}
+.ld-spec {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  width: 24%;
+  box-sizing: border-box;
+  padding-right: 1.33%;
+  text-align: center;
+  color: #111;
+}
+.ld-spec:nth-child(4n) { padding-right: 0; }
+
+.spec-title {
+  font-size: clamp(14px, 1.2vw, 18px);
+  font-weight: 800;
+  margin: .4vw 0 .2vw;
+}
+.spec-sub {
+  font-size: clamp(11px, .95vw, 13px);
+  color: #6b6f75;
+  margin: 0 0 1vw;
+}
+
+.spec-chip { margin: .4vw 0 1vw; }
+.chip {
+  display: inline-block;
+  padding: .25em .55em;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: .9em;
+  margin: 0 .2em;
+}
+
+.spec-ai {
+  margin: .2vw 0 1.1vw;
+  font-weight: 700;
+}
+
+.spec-ports,
+.spec-extra {
+  margin: .8vw 0;
+  line-height: 1.55;
+  color: #333;
+}
+

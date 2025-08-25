@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/* ========== Reset ========== */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+ }
+
+ 
+ul { 
+  list-style: none;
+ }
+a { 
+  text-decoration: none; 
+  color: #333; 
+}
+
+/* 페이지 래퍼(가로 넘침 차단) */
+.wrap { overflow-x: clip; }
+
+/* ========== Layout ========== */
+/* 공통 inner: 중앙 정렬 (좌우 폭은 프로젝트 스타일에 맞게 80vw) */
+.inner {
+  width: 80vw;           /* 네가 지정한 값 유지 */
+  margin: 0 auto;        /* 가운데 정렬 */
+  overflow: visible;     /* 카드 그림자 안 잘리게 */
+}
+
+/* 섹션 타이틀은 좌마진 제거 (inner가 정렬 담당) */
+section h3 { margin-left: 0; }
+
+/* ========== Swiper 공통 ========== */
+/* 컨테이너는 화면 폭 100%로, 프레임 밖은 잘라서 3.5개처럼 보이지 않게 */
+.swiper {
+  width: 100%;
+  overflow: hidden;      /* ★ 핵심: 컨테이너가 딱 잘라줌 */
+  margin: 0;
+  padding: 0;            /* 좌우 여유 필요하면 0 8px; + margin:0 -8px; 세트로 사용 */
+}
+
+/* 래퍼/슬라이드는 그림자나 포커스 링이 보이도록 허용 */
+.swiper .swiper-wrapper,
+.swiper .swiper-slide { overflow: visible; }
+
+/* 각 슬라이드 기본 형태 */
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* overflow: visible;  // 위에서 일괄 지정됨 */
+}
+
+/* 카드 전체를 클릭 가능하게 할 때 */
+.swiper-slide > a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.swiper-slide > a:focus-visible {
+  outline: 2px solid rgba(0,0,0,.25);
+  outline-offset: 4px;
+}
+
+/* 슬라이드 이미지: 비율 유지 */
+.swiper-slide img {
+  width: 100%;
+  height: auto;      /* 이미지 원본 비율 유지 */
+  display: block;    /* 인라인 갭 제거 */
+}

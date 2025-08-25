@@ -1,0 +1,31 @@
+@import url("./main.css");
+
+
+.header-nav {
+  display: flex;
+  justify-content: center;   /* 중앙 정렬 */
+  gap: 4vw;                  /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  width: 100%;
+  margin: 1vw auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.header-desc{
+    margin-top: 10vw;
+    margin-left: 8vw;
+    white-space: nowrap;
+}
+
+.header-desc h1{
+    font-size: clamp(16px, 2vw, 35px);
+    color: #808080;
+}
+
+.header-desc h2{
+    font-size: clamp(30px, 3vw, 60px);
+}
+
+
+

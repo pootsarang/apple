@@ -1,0 +1,15 @@
+.banner{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  margin-bottom: 7vw;
+}
+
+.banner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}

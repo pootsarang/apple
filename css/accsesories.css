@@ -1,0 +1,126 @@
+.accessories {
+  margin-top: 10vw;
+  overflow: visible; /* 그림자 안 잘리게 */
+}
+
+.accessories h3 {
+  
+  font-size: clamp(16px, 2vw, 35px);
+}
+
+/* Swiper 레이아웃 */
+.swiper-accessories {
+  margin-top: 2vw;
+  overflow: visible;
+}
+
+.swiper-accessories .swiper-wrapper {
+  
+  overflow: visible; /* ✅ 그림자 안 잘림 */
+}
+
+.swiper-accessories .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: visible; /* ✅ 잘림 방지 */
+  /* border-radius / box-shadow 없음 → 카드에서만 */
+}
+
+/* ===== 카드 2-레이어 ===== */
+/* 바깥: 그림자 담당 */
+.acc-card {
+  position: relative;
+  border-radius: 4%;
+  box-shadow: 0 0 4px rgba(0,0,0,.25); /* Figma Drop Shadow */
+  background: transparent;
+}
+
+/* 안쪽: 둥근 모서리 + 내용 클리핑 */
+.acc-inner {
+  position: relative;
+  aspect-ratio: 400 / 565;   /* 비율 고정 */
+  border-radius: 4%;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* 이미지 (항상 뒤로) */
+.acc-inner > img {
+  position: relative;
+  z-index: 0;               /* 이미지 레이어 0 */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* 잘림 없이 전체 보이게 */
+  display: block;
+}
+
+/* ===== 텍스트 공통: 항상 앞(z=2) ===== */
+.acc--hero .acc-hero-txt,
+.acc--product .acc-txt {
+  position: absolute;
+  z-index: 2;               /* ✅ 텍스트 무조건 이미지 위 */
+  pointer-events: none;     /* 클릭은 밑 요소가 받도록 */
+  color: #000;
+}
+
+/* ── 1번 슬라이드(히어로) ── */
+.acc--hero .acc-hero-txt {
+  left: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.acc--hero .headline {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(20px, 2.4vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.acc--hero .subline {
+  margin: 0;
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ── 제품 카드(2번 이후) ── */
+.acc--product .acc-txt {
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.acc--product .title {
+  margin: 0;
+  font-size: clamp(14px, 1.6vw, 18px);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.acc--product .desc {
+  margin: 0;
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: #333;
+  line-height: 1.35;
+}
+.acc--product .price {
+  margin: 4px 0 0;
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 작은 화면 패딩 보정 */
+@media (max-width: 360px) {
+  .acc--hero .acc-hero-txt,
+  .acc--product .acc-txt {
+    left: 12px;
+    right: 12px;
+    top: 12px;
+    bottom: 12px;
+  }
+}

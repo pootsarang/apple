@@ -1,0 +1,25 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+ul { 
+    list-style: none; 
+}
+a { 
+    text-decoration: none; 
+    color: #333; 
+}
+
+
+.header-nav {
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  width: 100%;
+  margin: 1vw auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}

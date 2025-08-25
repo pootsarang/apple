@@ -1,0 +1,30 @@
+.explore{
+    margin-top: 8vw;
+}
+
+
+.products{
+    display: flex;
+    margin: 1vw auto;
+    width: 85vw;
+    gap: 3vw;
+}
+
+.explore h3{
+    margin-left: 7.5vw;
+    font-size: clamp(16px, 2vw, 35px);
+}
+
+.products img{
+    width: 100%;
+}
+
+.products a{
+    text-align: center;
+    display: block;
+    font-size: clamp(13px, 2vw, 30px);
+}
+
+.products p{
+    margin-top: 1vw;
+}

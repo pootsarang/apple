@@ -1,0 +1,35 @@
+.link h3 {
+  font-size: clamp(16px, 2vw, 35px);
+}
+
+.linklist {
+  margin-top: 2vw;
+  margin-bottom: 4vw;
+
+  /* ✅ inline-block 카드들이 자동 줄바꿈되게 */
+  font-size: 0;          /* inline-block 사이 공백 제거 */
+  display: flex;
+  gap: 2%;
+
+}
+
+.linklist li {
+  display: inline-block;       /* flex 대신 옆으로 나열 */
+  vertical-align: top;          /* 좌우/아래 간격 */
+  box-shadow: 0 0 2px rgba(44,44,44,0.5);
+  padding: 0.8vw 1.2vw;
+  border-radius: 4%;
+font-size: clamp(px, 1vw, 16px);          /* 부모 font-size:0 해제 */
+  background: #fff;            /* 필요하면 배경 */
+}
+
+.linklist a {
+  font-size: clamp(12px, 1vw, 20px);
+  font-weight: 450;
+  display: block;
+  white-space: nowrap;   /* 텍스트 줄바꿈 방지 */
+}
+
+.fa-arrow-right {
+  transform: rotate(-30deg); /* rotate 속성 대신 transform 사용 */
+}

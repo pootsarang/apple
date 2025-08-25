@@ -1,0 +1,123 @@
+.newproducts {
+  margin-top: 10vw;
+}
+
+.newproducts h3 {
+  
+  font-size: clamp(16px, 2vw, 35px);
+}
+
+/* Swiper 레이아웃 */
+.swiper-newproducts {
+  margin-top: 2vw;
+  overflow: visible;
+}
+.swiper-newproducts .swiper-wrapper {
+  
+  overflow: visible;
+}
+.swiper-newproducts .swiper-slide {
+  margin: 0;
+  position: relative;
+  overflow: visible; /* 그림자 안 잘리게 */
+}
+
+/* ===== 카드 2-레이어 ===== */
+/* 바깥: 그림자 담당 */
+.newproducts .slide-card {
+  position: relative;
+  border-radius: 4%;
+  box-shadow: 0 0 4px rgba(0,0,0,.25); /* Figma Drop Shadow */
+  background: transparent;
+}
+
+/* 안쪽: 클리핑 + 비율 유지 */
+.newproducts .slide-inner {
+  aspect-ratio: 460 / 565;  /* 고정 비율 */
+  border-radius: 4%;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+/* 이미지: 크롭 or contain 상황에 따라 */
+.newproducts .slide-inner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 기본은 cover, 필요하면 contain으로 바꿔 */
+  display: block;
+}
+
+/* ===== 텍스트 오버레이 ===== */
+.newproducts .slide-txt {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.newproducts .title {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(22px, 3.4vw, 42px);
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  word-break: keep-all;
+}
+
+.newproducts .sub {
+  margin: 0;
+  font-size: clamp(13px, 1.7vw, 19px);
+  font-weight: 600;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.newproducts .sub sup {
+  font-size: .55em;
+  line-height: 1;
+  transform: translateY(-.2em);
+}
+
+.newproducts .price {
+  margin: 8px 0 0;
+  font-size: clamp(15px, 2.1vw, 22px);
+  font-weight: 700;
+}
+
+/* 애플 느낌 그라데이션 텍스트 */
+.ai-gradient {
+  background: linear-gradient(90deg,#0a84ff,#7c4dff,#ff2d55);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+
+/* ===== 텍스트 색상 테마 ===== */
+/* 1번(다크 배경)만 흰색 */
+.newproducts .slide--dark .title,
+.newproducts .slide--dark .sub,
+.newproducts .slide--dark .price {
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,.3);
+}
+/* 나머지는 검정 */
+.newproducts .slide--light .title,
+.newproducts .slide--light .sub,
+.newproducts .slide--light .price {
+  color: #000;
+}
+
+/* 초소형 기기 보정 */
+@media (max-width: 360px) {
+  .newproducts .slide-txt {
+    left: 12px;
+    top: 12px;
+    gap: 8px;
+  }
+}

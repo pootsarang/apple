@@ -1,0 +1,40 @@
+.difference{
+  margin-top: 10vw;
+  margin-bottom: 7vw;
+}
+.difference h3{
+  font-size: clamp(16px, 2vw, 35px);
+}
+
+/* ✅ flex/grid 없이 4등분 반응형 */
+.ul-difference{
+  font-size: 0;              /* inline-block 사이 공백 제거 */
+  /* white-space: nowrap;    /* (선택) 무조건 줄바꿈 금지하고 싶으면 켜기 */
+  width: 100%;
+}
+
+/* li 4등분 + 패딩은 width 안에 포함 */
+.ul-difference li{
+  display: inline-block;
+  width: 25%;                /* 항상 4칸 */
+  box-sizing: border-box;    /* 패딩/보더 포함 */
+  padding: 0.8vw;            /* 카드 간격(반응형) */
+  vertical-align: top;       /* 위 기준 정렬 */
+  font-size: 16px;           /* 자식 텍스트 다시 보이게(부모 0 해제) */
+}
+
+/* 카드 박스 */
+.img-differ{
+  padding: 1vw;
+  border-radius: 5%;
+  box-shadow: 0 0 4px rgba(0,0,0,.25);
+  background: #fff;
+}
+
+/* 이미지: 비율 유지, 잘림 없음 */
+.ul-difference img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
