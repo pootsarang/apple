@@ -12,6 +12,18 @@ a {
     color: #333; 
 }
 
+/* 페이지 래퍼(가로 넘침 차단) */
+.wrap { overflow-x: clip; }
+
+/* ========== Layout ========== */
+/* 공통 inner: 중앙 정렬 (좌우 폭은 프로젝트 스타일에 맞게 80vw) */
+.inner {
+  width: 80vw;           /* 네가 지정한 값 유지 */
+  margin: 0 auto;        /* 가운데 정렬 */
+  overflow: visible;     /* 카드 그림자 안 잘리게 */
+}
+
+
 
 .header-nav {
   display: flex;
@@ -73,6 +85,138 @@ a {
     margin: 0 !important;                      /* 페이지별 여백 무력화 */
   }
 }
+
+/* 섹션 */
+.airpods-lineup {
+  background: #f6f7f8;
+  padding: 4vw 0 6vw;
+}
+.airpods-lineup .inner {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.ap-head { position: relative; }
+.ap-title {
+  margin: 0 0 1.8vw;
+  font-size: clamp(26px, 3.6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.ap-all {
+  position: absolute;
+  right: 0;
+  top: .6vw;
+  font-size: clamp(12px, 1.1vw, 16px);
+  color: #0a84ff;
+  text-decoration: none;
+}
+
+/* 세트 래퍼 */
+.ap-sets { font-size: 0; }            /* inline-block 공백 제거 */
+
+/* 세트 */
+.ap-set {
+  display: inline-block;
+  vertical-align: top;
+  width: 23.5%;                        /* 4열 */
+  margin-right: 2%;
+  box-sizing: border-box;
+  font-size: 16px;                     /* 부모 0 해제 */
+  text-align: center;
+  color: #111;
+  margin-top: 2vw;
+}
+.ap-set:nth-child(4n) { margin-right: 0; }
+
+/* 카드(설명) */
+
+.ap-img { height: clamp(160px, 20vw, 260px); display: block; }
+.ap-img img {
+  max-height: 100%;
+  max-width: 90%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.ap-dots { margin: .6vw 0 1vw; padding: 0; }
+.ap-dots li{
+  display: inline-block;
+  width: .5vw; height: .5vw;
+  min-width: 6px; min-height: 6px;
+  border-radius: 50%;
+  background: #c8c8ce;
+  margin: 0 .22vw;
+}
+.ap-dots li.on { background: #2c2c2c; }
+
+.ap-name { margin: .5vw 0 0; font-size: clamp(15px, 1.5vw, 20px); font-weight: 800; }
+.ap-sub  { margin: .3vw 0 0; color: #6b6f75; font-size: clamp(12px, 1vw, 14px); line-height: 1.6; }
+.ap-price{ margin: .8vw 0 0; font-weight: 800; font-size: clamp(13px, 1.05vw, 16px); }
+
+/* 버튼 */
+.ap-cta{ margin-top: 1.1vw; }
+.btn{ display:inline-block; border-radius:999px; text-decoration:none; }
+.btn.primary{ background:#0a84ff; color:#fff; padding:.8vw 1.4vw; font-size:clamp(12px,1.05vw,14px); font-weight:700; }
+.btn.link{ margin-left:.7vw; color:#0a84ff; padding:.8vw 0; font-size:clamp(12px,1.05vw,14px); font-weight:700; }
+
+/* 구분선 */
+.ap-sep{
+  margin: 2vw 0 1.4vw;
+  border: none;
+  border-top: 1px solid #dfe2e5;
+  width: 100%;
+}
+
+/* 스펙 */
+.ap-spec { margin: 1vw 0 0; }
+.ap-ico{
+  width: 36px; height: 36px;
+  margin: 0 auto .5vw;
+  line-height: 36px; font-size: 18px;
+  border-radius: 8px; border:1px solid #ddd;
+}
+.spec-title{ font-weight:800; font-size:clamp(12px,1vw,14px); }
+.spec-sub  { color:#6b6f75; font-size:clamp(11px,.95vw,13px); line-height:1.5; margin-top:.15vw; }
+
+
+
+/* ===== 반응형 ===== */
+/* 900px 이하 → 2열 */
+@media (max-width: 900px){
+  .ap-set{
+    width: 48%;
+    margin-right: 4%;
+  }
+  .ap-set:nth-child(2n){ margin-right: 0; }
+  .ap-all{
+    position: static;
+    display: inline-block;
+    margin-left: 1vw;
+  }
+}
+
+/* 520px 이하 → 1열 */
+@media (max-width: 520px){
+  .ap-set{
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.terms{
+   
+    font-size: clamp(10px, 1vw, 14px);
+    color: rgb(158, 158, 158);
+    margin-top: 3vw;
+}
+
+
+
+
+
 /* Footer */
 .footer{
   margin-top: 3vw;

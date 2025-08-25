@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 4vw, 100px); /* ← 4vw 대신 과하지 않게 제한 */
+  width: 100%;
+  margin: 1vw auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: normal; /* ← nowrap 지우고 줄바꿈 허용 */
+  flex-wrap: wrap; /* ← 좁아지면 다음 줄로 */
+  box-sizing: border-box; /* ← 패딩/보더 포함 계산 */
+}
+
+/* 기본 p 마진 제거 (가끔 밀림 원인) */
+.header-nav p {
+  margin: 0;
+}
+
+/* === 530px 이하: 일부 항목 숨기고 3개만 균등 배치 === */
+@media (max-width: 530px) {
+  #header-airpods,
+  #header-applewatch,
+  #header-ipad,
+  #header-iphone,
+  #header-mac {
+    display: none !important;
+  }
+
+  .header-nav {
+    justify-content: space-between !important; /* space-around도 가능 */
+    gap: 0 !important;                         /* 남아있는 gap 제거 */
+    padding: 8px 16px;
+  }
+
+  .header-nav p {
+    margin: 0 !important;                      /* 페이지별 여백 무력화 */
+  }
+   #header-store{
+    margin-left: 32vw;
+  }
+}
+
+.bag-alert{
+   margin-top: 8vw;
+  text-align: center; /* 안에 글자를 가운데 */
+    
+}
