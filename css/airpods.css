@@ -23,3 +23,54 @@ a {
   font-weight: 450;
   white-space: nowrap;
 }
+
+/* === Header: 공통 기본값 (페이지 어디서나 동일) === */
+.header {
+  background: #fff;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  width: 100%;
+  padding: 8px 0;
+  margin: 0 auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.header-nav p {
+  margin: 0; /* 페이지별 margin 충돌 방지 */
+}
+
+.header-nav a {
+  display: inline-block;
+  line-height: 1;
+  color: #1d1d1f;
+  text-decoration: none;
+}
+
+/* === 530px 이하: 일부 항목 숨기고 3개만 균등 배치 === */
+@media (max-width: 530px) {
+  #header-airpods,
+  #header-applewatch,
+  #header-ipad,
+  #header-iphone,
+  #header-mac,
+  #header-store {
+    display: none !important;
+  }
+
+  .header-nav {
+    justify-content: space-between !important; /* space-around도 가능 */
+    gap: 0 !important;                         /* 남아있는 gap 제거 */
+    padding: 8px 16px;
+  }
+
+  .header-nav p {
+    margin: 0 !important;                      /* 페이지별 여백 무력화 */
+  }
+}

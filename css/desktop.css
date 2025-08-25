@@ -1,22 +1,24 @@
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* ============ Reset & Base ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul { 
-    list-style: none; 
-}
-a { 
-    text-decoration: none; 
-    color: #333; 
+ul {
+  list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
 
+/* ============ Header Nav ============ */
 .header-nav {
   display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  justify-content: center;          /* 중앙 정렬 */
+  gap: 4vw;                         /* 뷰포트 기준 간격 */
   width: 100%;
   margin: 1vw auto;
   font-size: clamp(15px, 1.2vw, 22px);
@@ -24,7 +26,23 @@ a {
   white-space: nowrap;
 }
 
-/* 섹션 */
+/* (선택) 아주 작은 화면에서는 주요 항목만 남기기 예시
+@media (max-width: 530px) {
+  #header-airpods,
+  #header-applewatch,
+  #header-ipad,
+  #header-iphone,
+  #header-mac,
+  #header-store {
+    display: none !important;
+  }
+  .header-nav {
+    justify-content: space-around;
+  }
+}
+*/
+
+/* ============ Desktop Lineup Section ============ */
 .lineup-desk {
   background: #f6f7f8;
   padding: 4vw 0 6vw;
@@ -35,7 +53,7 @@ a {
   margin: 0 auto;
 }
 
-/* 헤더 */
+/* 헤더(섹션 내부) */
 .ld-head {
   position: relative;
 }
@@ -60,14 +78,15 @@ a {
 .ld-tabs {
   margin: 1vw 0 3vw;
   padding: 0;
-  list-style: none;
-  font-size: 0;
+  font-size: 0; /* inline-block 공백 제거용 */
 }
+
 .ld-tabs li {
   display: inline-block;
   margin-right: .8vw;
-  font-size: 14px;
+  font-size: 14px; /* 부모 0 해제 */
 }
+
 .ld-tabs a {
   display: inline-block;
   padding: .7vw 1.4vw;
@@ -78,48 +97,53 @@ a {
   font-size: clamp(12px, 1.1vw, 15px);
   font-weight: 700;
 }
+
 .ld-tabs a.is-active {
   background: #111;
   color: #fff;
 }
 
-/* 카드 4열 */
+/* ========== 카드 4열 (상단) ========== */
 .ld-list {
-  font-size: 0; /* inline-block 간격 제거 */
+  font-size: 0; /* inline-block 공백 제거 */
 }
+
 .ld-item {
   display: inline-block;
   vertical-align: top;
-  font-size: 16px;
+  font-size: 16px;         /* 부모 0 해제 */
   width: 24%;
   box-sizing: border-box;
-  padding-right: 1.33%; /* 3칸 간격 균등 */
+  padding-right: 1.33%;    /* 4열 간격 */
   text-align: center;
 }
-.ld-item:nth-child(4n) { padding-right: 0; }
 
-.ld-img {
-  /* 고정값 대신 반응형 높이: 화면에 따라 160~280px 사이 */
-  height: clamp(160px, 18vw, 280px);
-  display: flex;
-  align-items: flex-end;     /* ← 아래 기준선으로 맞춤(미니처럼 작은 제품도 바닥선에 딱) */
-  justify-content: center;
-  padding-bottom: 8px;       /* 살짝 여백 (선택) */
+.ld-item:nth-child(4n) {
+  padding-right: 0;
 }
 
-/* 원본 비율 유지 + 잘리지 않게 */
+/* 카드 이미지 */
+.ld-img {
+  height: clamp(160px, 18vw, 280px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
 .ld-img img {
   max-height: 100%;
   max-width: 88%;
   object-fit: contain;
   display: block;
 }
-/* 점 네비 */
+
+/* 점 네비 (사용한다면) */
 .ld-dots {
   margin: 1vw 0 1.2vw;
   padding: 0;
-  list-style: none;
 }
+
 .ld-dots li {
   display: inline-block;
   width: .5vw;
@@ -130,7 +154,10 @@ a {
   background: #c8c8ce;
   margin: 0 .25vw;
 }
-.ld-dots li.on { background: #2c2c2c; }
+
+.ld-dots li.on {
+  background: #2c2c2c;
+}
 
 /* 카드 텍스트 */
 .ld-name {
@@ -138,18 +165,21 @@ a {
   font-size: clamp(16px, 1.6vw, 22px);
   font-weight: 800;
 }
+
 .ld-sub {
   margin: .2vw 0 0;
   color: #6b6f75;
   font-size: clamp(12px, 1vw, 14px);
   font-weight: 700;
 }
+
 .ld-desc {
   margin: .8vw 0 0;
   color: #333;
   font-size: clamp(12px, 1.05vw, 15px);
   line-height: 1.6;
 }
+
 .ld-price {
   margin: .9vw 0 0;
   font-weight: 800;
@@ -157,12 +187,16 @@ a {
 }
 
 /* 버튼 */
-.ld-cta { margin-top: 1.1vw; }
+.ld-cta {
+  margin-top: 1.1vw;
+}
+
 .btn {
   display: inline-block;
   border-radius: 999px;
   text-decoration: none;
 }
+
 .btn.primary {
   background: #0a84ff;
   color: #fff;
@@ -170,6 +204,7 @@ a {
   font-size: clamp(12px, 1.05vw, 14px);
   font-weight: 700;
 }
+
 .btn.link {
   margin-left: .7vw;
   color: #0a84ff;
@@ -186,34 +221,42 @@ a {
   width: 100%;
 }
 
-/* 스펙 4열 */
+/* ========== 스펙 4열 (하단) ========== */
 .ld-specs {
-  font-size: 0;
+  font-size: 0; /* inline-block 공백 제거 */
 }
+
 .ld-spec {
   display: inline-block;
   vertical-align: top;
-  font-size: 14px;
+  font-size: 14px;        /* 부모 0 해제 */
   width: 24%;
   box-sizing: border-box;
   padding-right: 1.33%;
   text-align: center;
   color: #111;
 }
-.ld-spec:nth-child(4n) { padding-right: 0; }
+
+.ld-spec:nth-child(4n) {
+  padding-right: 0;
+}
 
 .spec-title {
   font-size: clamp(14px, 1.2vw, 18px);
   font-weight: 800;
   margin: .4vw 0 .2vw;
 }
+
 .spec-sub {
   font-size: clamp(11px, .95vw, 13px);
   color: #6b6f75;
   margin: 0 0 1vw;
 }
 
-.spec-chip { margin: .4vw 0 1vw; }
+.spec-chip {
+  margin: .4vw 0 1vw;
+}
+
 .chip {
   display: inline-block;
   padding: .25em .55em;
@@ -236,13 +279,103 @@ a {
   color: #333;
 }
 
-@media (max-width:530px) {
-  #header-airpods, #header-applewatch, #header-ipad, #header-iphone, #header-mac, #header-store {
-    display: none !important; 
+/* ============ 반응형 ============ */
+/* 768px 이하 → 2열 */
+@media (max-width: 768px) {
+  .ld-item,
+  .ld-spec {
+    width: 48%;
+    padding-right: 4%;
   }
-  
-  .header-nav{
-    display: flex;
-    justify-content: space-around;
+  .ld-item:nth-child(2n),
+  .ld-spec:nth-child(2n) {
+    padding-right: 0;
+  }
+
+  /* 섹션 헤더 우측 링크 내려놓기 */
+  .ld-all {
+    position: static;
+    display: inline-block;
+    margin-left: 1vw;
+  }
+}
+
+/* 480px 이하 → 1열 */
+@media (max-width: 480px) {
+  .ld-item,
+  .ld-spec {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+/* ================== 표시 토글(가장 아래에 넣기) ================== */
+/* 기본값: 데스크톱 먼저 보이게 */
+.ld-desktop-only {
+  display: block !important;
+}
+
+.ld-mobile-only {
+  display: none !important;
+}
+
+/* 768px 이하: 모바일 전용으로 전환 */
+@media (max-width: 768px) {
+  .ld-desktop-only {
+    display: none !important;
+  }
+  .ld-mobile-only {
+    display: block !important;
+  }
+}
+
+/* === Header: 공통 기본값 (페이지 어디서나 동일) === */
+.header {
+  background: #fff;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  width: 100%;
+  padding: 8px 0;
+  margin: 0 auto;
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.header-nav p {
+  margin: 0; /* 페이지별 margin 충돌 방지 */
+}
+
+.header-nav a {
+  display: inline-block;
+  line-height: 1;
+  color: #1d1d1f;
+  text-decoration: none;
+}
+
+/* === 530px 이하: 일부 항목 숨기고 3개만 균등 배치 === */
+@media (max-width: 530px) {
+  #header-airpods,
+  #header-applewatch,
+  #header-ipad,
+  #header-iphone,
+  #header-mac,
+  #header-store {
+    display: none !important;
+  }
+
+  .header-nav {
+    justify-content: space-between !important; /* space-around도 가능 */
+    gap: 0 !important;                         /* 남아있는 gap 제거 */
+    padding: 8px 16px;
+  }
+
+  .header-nav p {
+    margin: 0 !important;                      /* 페이지별 여백 무력화 */
   }
 }
