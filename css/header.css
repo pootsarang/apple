@@ -3,40 +3,47 @@
 .header-nav {
   display: flex;
   justify-content: center;
-  gap: clamp(6px, 4vw, 100px);   /* ← 4vw 대신 과하지 않게 제한 */
+  gap: clamp(6px, 4vw, 100px); /* ← 4vw 대신 과하지 않게 제한 */
   width: 100%;
   margin: 1vw auto;
   font-size: clamp(15px, 1.2vw, 22px);
   font-weight: 450;
-  white-space: normal;          /* ← nowrap 지우고 줄바꿈 허용 */
-  flex-wrap: wrap;              /* ← 좁아지면 다음 줄로 */
-  box-sizing: border-box;       /* ← 패딩/보더 포함 계산 */
+  white-space: normal; /* ← nowrap 지우고 줄바꿈 허용 */
+  flex-wrap: wrap; /* ← 좁아지면 다음 줄로 */
+  box-sizing: border-box; /* ← 패딩/보더 포함 계산 */
 }
 
 /* 기본 p 마진 제거 (가끔 밀림 원인) */
-.header-nav p { margin: 0; }
-
-.header-desc{
-    margin-top: 10vw;
-    margin-left: 8vw;
-    white-space: nowrap;
+.header-nav p {
+  margin: 0;
 }
 
-.header-desc h1{
-    font-size: clamp(16px, 2vw, 35px);
-    color: #808080;
+.header-desc {
+  margin-top: 10vw;
+  margin-left: 8vw;
+  white-space: nowrap;
 }
 
-.header-desc h2{
-    font-size: clamp(30px, 3vw, 60px);
+.header-desc h1 {
+  font-size: clamp(16px, 2vw, 35px);
+  color: #808080;
 }
 
-@media (max-width:530px) {
-  #header-airpods, #header-applewatch, #header-ipad, #header-iphone, #header-mac, #header-store {
-    display: none !important; 
+.header-desc h2 {
+  font-size: clamp(30px, 3vw, 60px);
+}
+
+@media (max-width: 530px) {
+  #header-airpods,
+  #header-applewatch,
+  #header-ipad,
+  #header-iphone,
+  #header-mac,
+  #header-store {
+    display: none !important;
   }
-  
-  .header-nav{
+
+  .header-nav {
     display: flex;
     justify-content: space-around;
   }

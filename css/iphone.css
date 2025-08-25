@@ -1,52 +1,257 @@
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* ============ Reset & Base ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul { 
-    list-style: none; 
-}
-a { 
-    text-decoration: none; 
-    color: #333; 
+ul {
+  list-style: none;
 }
 
-/* 페이지 래퍼(가로 넘침 차단) */
-.wrap { overflow-x: clip; }
+a {
+  text-decoration: none;
+  color: #333;
+}
 
-/* ========== Layout ========== */
-/* 공통 inner: 중앙 정렬 (좌우 폭은 프로젝트 스타일에 맞게 80vw) */
 .inner {
-  width: 80vw;           /* 네가 지정한 값 유지 */
-  margin: 0 auto;        /* 가운데 정렬 */
-  overflow: visible;     /* 카드 그림자 안 잘리게 */
+  width: 80vw;
+  margin: 0 auto;
+  overflow: visible; /* 카드 그림자 안 잘리게 */
 }
 
+.wrap {
+  overflow-x: clip;
+}
 
+/* ============ Header Nav ============ */
 .header-nav {
-  display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  display: inline-block;     /* flex 대신 */
   width: 100%;
-  margin: 1vw auto;
+  white-space: nowrap;
+  text-align: center;
   font-size: clamp(15px, 1.2vw, 22px);
   font-weight: 450;
-  white-space: nowrap;
 }
 
-/* 섹션 */
+.header-nav p {
+  display: inline-block;
+  margin: 1vw 2vw;
+}
+
+/* ============ Mac Lineup ============ */
+.lineup {
+  background: #f6f7f8;
+  padding: 4vw 0 6vw;
+}
+
+.lu-head {
+  position: relative;
+}
+
+.lu-title {
+  margin: 0 0 1.8vw;
+  font-size: clamp(22px, 3.2vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lu-all {
+  position: absolute;
+  right: 0;
+  top: .6vw;
+  font-size: clamp(12px, 1.1vw, 16px);
+  color: #0a84ff;
+  text-decoration: none;
+}
+
+/* 탭 */
+.lu-tabs {
+  margin: 1vw 0 3vw;
+  font-size: 0;
+}
+
+.lu-tabs li {
+  display: inline-block;
+  margin-right: .8vw;
+  font-size: 14px;
+}
+
+.lu-tabs a {
+  display: inline-block;
+  padding: .7vw 1.4vw;
+  border-radius: 999px;
+  background: #e9ecef;
+  color: #111;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.lu-tabs a.is-active {
+  background: #111;
+  color: #fff;
+}
+
+/* 카드+스펙 2세트 */
+.lu-columns {
+  font-size: 0; /* inline-block 공백 제거 */
+}
+
+.lu-col {
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.lu-col + .lu-col {
+  margin-left: 2%;
+}
+
+/* 카드 */
+.lu-item {
+  text-align: center;
+}
+
+.lu-img img {
+  width: 82%;
+  height: auto;
+  display: inline-block;
+}
+
+.lu-name {
+  margin: .4vw 0 0;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lu-sub {
+  margin: .4vw 0 0;
+  color: #6b6f75;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 700;
+}
+
+.lu-desc {
+  margin: 1vw 0 0;
+  color: #333;
+  font-size: clamp(12px, 1.15vw, 16px);
+  line-height: 1.6;
+}
+
+.lu-price {
+  margin: 1.2vw 0 0;
+  font-weight: 800;
+  font-size: clamp(14px, 1.25vw, 18px);
+}
+
+.lu-cta {
+  margin-top: 1.4vw;
+}
+
+/* 버튼 */
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #0a84ff;
+  color: #fff;
+  padding: .9vw 1.6vw;
+  font-weight: 700;
+  font-size: clamp(12px, 1.05vw, 15px);
+}
+
+.btn.link {
+  margin-left: .8vw;
+  color: #0a84ff;
+  font-weight: 700;
+  padding: .9vw 0;
+  font-size: clamp(12px, 1.05vw, 15px);
+}
+
+/* 구분선 */
+.lu-sep {
+  margin: 2.2vw 0 1.6vw;
+  border: none;
+  border-top: 1px solid #dfe2e5;
+  width: 100%;
+}
+
+/* 스펙 */
+.lu-spec {
+  text-align: center;
+  color: #111;
+}
+
+.spec-title {
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 800;
+  margin: .4vw 0 .2vw;
+}
+
+.spec-sub {
+  font-size: clamp(11px, .95vw, 13px);
+  color: #6b6f75;
+  margin: 0 0 1.2vw;
+}
+
+.spec-chip {
+  margin: .4vw 0 1vw;
+}
+
+.chip {
+  display: inline-block;
+  padding: .25em .55em;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: .9em;
+  margin: 0 .2em;
+}
+
+.spec-ai {
+  margin: .2vw 0 1.2vw;
+  font-weight: 700;
+}
+
+.spec-battery,
+.spec-ports,
+.spec-weight {
+  margin: .9vw 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* 모바일 (Mac 1열) */
+@media (max-width: 899.98px) {
+  .lu-col {
+    display: block;
+    width: 100%;
+  }
+
+  .lu-col + .lu-col {
+    margin: 5vw 0 0;
+  }
+
+  .lu-all {
+    position: static;
+    display: inline-block;
+    margin-left: 1vw;
+  }
+}
+
+/* ============ iPhone Lineup ============ */
 .lineup-phone {
   background: #f6f7f8;
   padding: 4vw 0 6vw;
 }
 
-.lineup-phone .inner {
-  width: 80vw;
-  margin: 0 auto;
-}
-
-/* 헤더 */
 .lp-head {
   position: relative;
 }
@@ -67,64 +272,20 @@ a {
   text-decoration: none;
 }
 
-/* 카드 4열 */
-.lp-list {
-  font-size: 0; /* inline-block 공백 제거 */
-}
-
-.lp-item {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 16px;
-  width: 24%;
-  box-sizing: border-box;
-  padding-right: 1.33%;
-  text-align: center;
-}
-
-.lp-item:nth-child(4n) {
-  padding-right: 0;
-}
-
+/* 공통 카드/스펙 */
 .lp-img {
-  text-align: center;
-  height: 280px;              /* 카드 안 고정 높이 (vw 단위로 바꿔도 됨) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lp-img img {
-  max-height: 100%;           /* 부모 높이에 맞춤 */
-  max-width: 90%;             /* 좌우 여백 살짝 */
-  object-fit: contain;        /* 이미지 잘리지 않고 비율 유지 */
+  height: 280px;
   display: block;
 }
 
-
-/* 색 점 */
-.lp-dots {
-  margin: .8vw 0 1.2vw;
-  padding: 0;
-  list-style: none;
+.lp-img img {
+  max-height: 100%;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
-.lp-dots li {
-  display: inline-block;
-  width: .5vw;
-  height: .5vw;
-  min-width: 6px;
-  min-height: 6px;
-  border-radius: 50%;
-  background: #c8c8ce;
-  margin: 0 .22vw;
-}
-
-.lp-dots li.on {
-  background: #2c2c2c;
-}
-
-/* 카드 텍스트 */
 .lp-name {
   margin: .6vw 0 0;
   font-size: clamp(16px, 1.6vw, 22px);
@@ -144,77 +305,24 @@ a {
   font-size: clamp(13px, 1.05vw, 16px);
 }
 
-/* 버튼 */
 .lp-cta {
   margin-top: 1.1vw;
 }
 
-.btn {
-  display: inline-block;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-.btn.primary {
-  background: #0a84ff;
-  color: #fff;
-  padding: .8vw 1.4vw;
-  font-size: clamp(12px, 1.05vw, 14px);
-  font-weight: 700;
-}
-
-.btn.link {
-  margin-left: .7vw;
-  color: #0a84ff;
-  padding: .8vw 0;
-  font-size: clamp(12px, 1.05vw, 14px);
-  font-weight: 700;
-}
-
-/* 구분선 */
 .lp-sep {
-  margin: 2.2vw 0 1.6vw;
+  margin: 2vw 0 1.6vw;
   border: none;
   border-top: 1px solid #dfe2e5;
   width: 100%;
 }
 
-/* 하단 스펙 4열 */
-.lp-specs {
-  font-size: 0;
-}
-
 .lp-spec {
-  display: inline-block;
-  vertical-align: top;
   font-size: 14px;
-  width: 24%;
-  box-sizing: border-box;
-  padding-right: 1.33%;
-  text-align: center;
   color: #111;
-}
-
-.lp-spec:nth-child(4n) {
-  padding-right: 0;
-}
-
-.spec-ai {
-  margin: .6vw 0 .4vw;
-  font-weight: 700;
 }
 
 .spec-chip {
   margin: .3vw 0 .9vw;
-}
-
-.chip {
-  display: inline-block;
-  padding: .25em .55em;
-  border-radius: 6px;
-  background: #111;
-  color: #fff;
-  font-size: .9em;
 }
 
 .spec-camera,
@@ -225,15 +333,64 @@ a {
   color: #333;
 }
 
-.terms{
-   
-     font-size: clamp(10px, 1vw, 14px);
-    color: rgb(158, 158, 158);
-    margin-top: 2vw;
+/* 데스크톱: 카드 4개 → 스펙 4개 */
+.lp-columns-desktop {
+  font-size: 0;
 }
 
-/* Footer */
-.footer{
+.lp-columns-desktop .lp-item,
+.lp-columns-desktop .lp-spec {
+  display: inline-block;
+  vertical-align: top;
+  width: 24%;
+  margin-right: 1.33%;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+}
+
+.lp-columns-desktop > :nth-child(4n) {
+  margin-right: 0;
+}
+
+/* 모바일: 세트(카드→스펙) */
+.lp-columns-mobile {
+  display: none;
+}
+
+@media (max-width: 899.98px) {
+  .lp-columns-desktop {
+    display: none;
+  }
+
+  .lp-columns-mobile {
+    display: block;
+  }
+
+  .lp-columns-mobile .lp-col {
+    display: block;
+  }
+
+  .lp-columns-mobile .lp-col + .lp-col {
+    margin-top: 6vw;
+  }
+
+  .lp-all {
+    position: static;
+    display: inline-block;
+    margin-left: 1vw;
+  }
+}
+
+/* ============ Terms ============ */
+.terms {
+  font-size: clamp(10px, 1vw, 14px);
+  color: rgb(158, 158, 158);
+  margin-top: 2vw;
+}
+
+/* ============ Footer ============ */
+.footer {
   margin-top: 3vw;
   padding: 2.5vw 0 4vw;
   border-top: 1px solid #e6e6e6;
@@ -241,78 +398,88 @@ a {
   font-size: clamp(12px, 1vw, 14px);
 }
 
-/* 컬럼 래퍼: inline-block 공백 제거 */
-.f-columns{ font-size: 0; }
+.f-columns {
+  font-size: 0;
+}
 
-/* 컬럼 5등분 */
-.f-col{
+.f-col {
   display: inline-block;
   vertical-align: top;
-  width: 20%;                 /* 항상 5열 */
+  width: 20%;
   padding-right: 1.5%;
   box-sizing: border-box;
-  font-size: clamp(12px, 1vw, 14px); /* 부모 0 해제 */
+  font-size: clamp(12px, 1vw, 14px);
   line-height: 1.6;
   margin-bottom: 2vw;
 }
 
-.f-col h4{
+.f-col h4 {
   margin: 0 0 .6rem;
   font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 700;
 }
-.f-col h5{
+
+.f-col h5 {
   margin: 1.2rem 0 .4rem;
   font-size: clamp(12px, 1vw, 14px);
   font-weight: 700;
 }
-.f-col ul{ margin: 0; padding: 0; list-style: none; }
-.f-col li{ margin: 0; padding: 0; }
-.f-col a{
+
+.f-col a {
   display: block;
   padding: .2rem 0;
   color: #333;
   text-decoration: none;
 }
 
-/* 안내문 */
-.f-shopnote{
+.f-shopnote {
   margin-top: 1.6vw;
   color: #555;
   font-size: clamp(12px, 1vw, 13px);
 }
-.f-shopnote a{ text-decoration: underline; }
 
-/* 구분선 */
-.f-sep{
+.f-shopnote a {
+  text-decoration: underline;
+}
+
+.f-sep {
   margin: 1.6vw 0;
   border: none;
   border-top: 1px solid #e6e6e6;
 }
 
-/* 하단 라인 */
-.f-legal{
-  font-size: 0;               /* inline 공백 제거 */
+.f-legal {
+  font-size: 0;
   color: #666;
 }
+
 .f-legal .copy,
-.f-legal .locale{
+.f-legal .locale {
   display: inline-block;
   font-size: clamp(11px, .9vw, 13px);
   vertical-align: middle;
 }
-.f-legal .copy{ margin-right: 1.2rem; }
-.f-legal .locale{ float: right; }
 
-.f-legal-links{
+.f-legal .copy {
+  margin-right: 1.2rem;
+}
+
+.f-legal .locale {
+  float: right;
+}
+
+.f-legal-links {
   display: inline-block;
   font-size: clamp(11px, .9vw, 13px);
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.f-legal-links li{
+
+.f-legal-links li {
   display: inline;
 }
-.f-legal-links li + li::before{
+
+.f-legal-links li + li::before {
   content: " | ";
   color: #bbb;
   margin: 0 .5rem;

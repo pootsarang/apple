@@ -236,3 +236,13 @@ a {
   color: #333;
 }
 
+@media (max-width:530px) {
+  #header-airpods, #header-applewatch, #header-ipad, #header-iphone, #header-mac, #header-store {
+    display: none !important; 
+  }
+  
+  .header-nav{
+    display: flex;
+    justify-content: space-around;
+  }
+}

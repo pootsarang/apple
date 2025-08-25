@@ -1,34 +1,33 @@
+/* Reset & Base */
 * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; }
 ul { 
-    list-style: none; 
+  list-style: none; 
 }
 a { 
-    text-decoration: none; 
-    color: #333; 
+  text-decoration: none; 
+  color: #333; 
 }
 
 /* 페이지 래퍼(가로 넘침 차단) */
-.wrap { overflow-x: clip; }
-
-/* ========== Layout ========== */
-/* 공통 inner: 중앙 정렬 (좌우 폭은 프로젝트 스타일에 맞게 80vw) */
-.inner {
-  width: 80vw;           /* 네가 지정한 값 유지 */
-  margin: 0 auto;        /* 가운데 정렬 */
-  overflow: visible;     /* 카드 그림자 안 잘리게 */
+.wrap { 
+  overflow-x: clip; 
 }
 
+/* 공통 inner */
+.inner {
+  width: 80vw;
+  margin: 0 auto;
+  overflow: visible; /* 카드 그림자 안 잘리게 */
+}
 
-
+/* Header Nav */
 .header-nav {
   display: flex;
   justify-content: center; /* 중앙 정렬 */
-  gap: 4vw; /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
+  gap: 4vw;                /* 뷰포트 너비 기준 (화면 크기에 따라 자동 조절) */
   width: 100%;
   margin: 1vw auto;
   font-size: clamp(15px, 1.2vw, 22px);
@@ -36,29 +35,24 @@ a {
   white-space: nowrap;
 }
 
-/* 섹션 */
+/* ================== Lineup ================== */
 .lineup {
   background: #f6f7f8;
   padding: 4vw 0 6vw;
 }
-
 .lineup .inner {
   width: 80vw;
   margin: 0 auto;
 }
 
 /* 헤더 */
-.lu-head {
-  position: relative;
-}
-
+.lu-head { position: relative; }
 .lu-title {
   margin: 0 0 1.8vw;
   font-size: clamp(22px, 3.2vw, 48px);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
-
 .lu-all {
   position: absolute;
   right: 0;
@@ -72,16 +66,13 @@ a {
 .lu-tabs {
   margin: 1vw 0 3vw;
   padding: 0;
-  list-style: none;
   font-size: 0;
 }
-
 .lu-tabs li {
   display: inline-block;
   margin-right: .8vw;
   font-size: 14px;
 }
-
 .lu-tabs a {
   display: inline-block;
   padding: .7vw 1.4vw;
@@ -92,110 +83,56 @@ a {
   font-size: clamp(12px, 1.1vw, 15px);
   font-weight: 600;
 }
-
 .lu-tabs a.is-active {
   background: #111;
   color: #fff;
 }
 
-/* 카드 2열 (inline-block) */
-.lu-list {
-  font-size: 0; /* inline-block 간격 제거 */
+/* 카드+스펙 2세트 래퍼 */
+.lu-columns {
+  display: flex;
+  gap: 2%;
 }
+.lu-col { flex: 1; }
 
-.lu-item {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 16px;
-  width: 49%;
-  box-sizing: border-box;
-  padding: 0 2% 0 0;
-}
-
-.lu-item + .lu-item {
-  padding: 0 0 0 2%;
-}
-
-.lu-img {
-  text-align: center;
-}
-
+/* 카드 */
+.lu-item { text-align: center; }
 .lu-img img {
   width: 82%;
   height: auto;
   display: inline-block;
 }
-
-/* 점 네비 */
-.lu-dots {
-  margin: 1vw 0 1.4vw;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.lu-dots li {
-  display: inline-block;
-  width: .55vw;
-  height: .55vw;
-  min-width: 6px;
-  min-height: 6px;
-  border-radius: 50%;
-  background: #c8c8ce;
-  margin: 0 .25vw;
-}
-
-.lu-dots li.on {
-  background: #2c2c2c;
-}
-
-/* 카드 텍스트 */
-.lu-name,
-.lu-sub,
-.lu-desc,
-.lu-price {
-  text-align: center;
-}
-
 .lu-name {
   margin: .4vw 0 0;
   font-size: clamp(18px, 2.2vw, 28px);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
-
 .lu-sub {
   margin: .4vw 0 0;
   color: #6b6f75;
   font-size: clamp(12px, 1.1vw, 15px);
   font-weight: 700;
 }
-
 .lu-desc {
   margin: 1vw 0 0;
   color: #333;
   font-size: clamp(12px, 1.15vw, 16px);
   line-height: 1.6;
 }
-
 .lu-price {
   margin: 1.2vw 0 0;
   font-weight: 800;
   font-size: clamp(14px, 1.25vw, 18px);
 }
+.lu-cta { margin-top: 1.4vw; }
 
 /* 버튼 */
-.lu-cta {
-  margin-top: 1.4vw;
-  text-align: center;
-}
-
 .btn {
   display: inline-block;
   border-radius: 999px;
   text-decoration: none;
 }
-
 .btn.primary {
   background: #0a84ff;
   color: #fff;
@@ -203,7 +140,6 @@ a {
   font-weight: 700;
   font-size: clamp(12px, 1.05vw, 15px);
 }
-
 .btn.link {
   margin-left: .8vw;
   color: #0a84ff;
@@ -220,43 +156,19 @@ a {
   width: 100%;
 }
 
-/* 하단 스펙 2열 */
-.lu-specs {
-  font-size: 0;
-}
-
-.lu-spec {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 14px;
-  width: 49%;
-  box-sizing: border-box;
-  padding-right: 2%;
-  text-align: center;
-  color: #111;
-}
-
-.lu-spec + .lu-spec {
-  padding-right: 0;
-  padding-left: 2%;
-}
-
+/* 스펙 */
+.lu-spec { text-align: center; color: #111; }
 .spec-title {
   font-size: clamp(14px, 1.3vw, 18px);
   font-weight: 800;
   margin: .4vw 0 .2vw;
 }
-
 .spec-sub {
   font-size: clamp(11px, .95vw, 13px);
   color: #6b6f75;
   margin: 0 0 1.2vw;
 }
-
-.spec-chip {
-  margin: .4vw 0 1vw;
-}
-
+.spec-chip { margin: .4vw 0 1vw; }
 .chip {
   display: inline-block;
   padding: .25em .55em;
@@ -266,12 +178,10 @@ a {
   font-size: .9em;
   margin: 0 .2em;
 }
-
 .spec-ai {
   margin: .2vw 0 1.2vw;
   font-weight: 700;
 }
-
 .spec-battery,
 .spec-ports,
 .spec-weight {
@@ -280,19 +190,10 @@ a {
   color: #333;
 }
 
-/* 반응형: 1열 */
+/* 반응형: 모바일 */
 @media (max-width: 900px) {
-  .lu-item,
-  .lu-spec {
-    width: 100%;
-    padding: 0 !important;
-  }
-
-  .lu-item + .lu-item,
-  .lu-spec + .lu-spec {
-    margin-top: 5vw;
-  }
-
+  .lu-columns { display: block; }
+  .lu-col + .lu-col { margin-top: 5vw; }
   .lu-all {
     position: static;
     display: inline-block;
@@ -300,15 +201,15 @@ a {
   }
 }
 
-.terms{
-   
-     font-size: clamp(10px, 1vw, 14px);
-    color: rgb(158, 158, 158);
-    margin-top: 2vw;
+/* ================== Terms ================== */
+.terms {
+  font-size: clamp(10px, 1vw, 14px);
+  color: rgb(158, 158, 158);
+  margin-top: 2vw;
 }
 
-/* Footer */
-.footer{
+/* ================== Footer ================== */
+.footer {
   margin-top: 3vw;
   padding: 2.5vw 0 4vw;
   border-top: 1px solid #e6e6e6;
@@ -316,34 +217,31 @@ a {
   font-size: clamp(12px, 1vw, 14px);
 }
 
-/* 컬럼 래퍼: inline-block 공백 제거 */
-.f-columns{ font-size: 0; }
-
-/* 컬럼 5등분 */
-.f-col{
+/* Footer columns */
+.f-columns { font-size: 0; }
+.f-col {
   display: inline-block;
   vertical-align: top;
-  width: 20%;                 /* 항상 5열 */
+  width: 20%;  /* 항상 5열 */
   padding-right: 1.5%;
   box-sizing: border-box;
-  font-size: clamp(12px, 1vw, 14px); /* 부모 0 해제 */
+  font-size: clamp(12px, 1vw, 14px);
   line-height: 1.6;
   margin-bottom: 2vw;
 }
-
-.f-col h4{
+.f-col h4 {
   margin: 0 0 .6rem;
   font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 700;
 }
-.f-col h5{
+.f-col h5 {
   margin: 1.2rem 0 .4rem;
   font-size: clamp(12px, 1vw, 14px);
   font-weight: 700;
 }
-.f-col ul{ margin: 0; padding: 0; list-style: none; }
-.f-col li{ margin: 0; padding: 0; }
-.f-col a{
+.f-col ul { margin: 0; padding: 0; }
+.f-col li { margin: 0; padding: 0; }
+.f-col a {
   display: block;
   padding: .2rem 0;
   color: #333;
@@ -351,44 +249,51 @@ a {
 }
 
 /* 안내문 */
-.f-shopnote{
+.f-shopnote {
   margin-top: 1.6vw;
   color: #555;
   font-size: clamp(12px, 1vw, 13px);
 }
-.f-shopnote a{ text-decoration: underline; }
+.f-shopnote a { text-decoration: underline; }
 
 /* 구분선 */
-.f-sep{
+.f-sep {
   margin: 1.6vw 0;
   border: none;
   border-top: 1px solid #e6e6e6;
 }
 
 /* 하단 라인 */
-.f-legal{
-  font-size: 0;               /* inline 공백 제거 */
-  color: #666;
-}
+.f-legal { font-size: 0; color: #666; }
 .f-legal .copy,
-.f-legal .locale{
+.f-legal .locale {
   display: inline-block;
   font-size: clamp(11px, .9vw, 13px);
   vertical-align: middle;
 }
-.f-legal .copy{ margin-right: 1.2rem; }
-.f-legal .locale{ float: right; }
+.f-legal .copy { margin-right: 1.2rem; }
+.f-legal .locale { float: right; }
 
-.f-legal-links{
+.f-legal-links {
   display: inline-block;
   font-size: clamp(11px, .9vw, 13px);
   margin: 0; padding: 0;
 }
-.f-legal-links li{
-  display: inline;
-}
-.f-legal-links li + li::before{
+.f-legal-links li { display: inline; }
+.f-legal-links li + li::before {
   content: " | ";
   color: #bbb;
   margin: 0 .5rem;
+}
+
+
+@media (max-width:530px) {
+  #header-airpods, #header-applewatch, #header-ipad, #header-iphone, #header-mac, #header-store {
+    display: none !important; 
+  }
+  
+  .header-nav{
+    display: flex;
+    justify-content: space-around;
+  }
 }
