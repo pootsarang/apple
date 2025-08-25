@@ -77,3 +77,100 @@ a {
   }
 }
 
+/* Footer */
+.footer{
+  margin-top: 3vw;
+  padding: 2.5vw 0 4vw;
+  border-top: 1px solid #e6e6e6;
+  color: #333;
+  font-size: clamp(12px, 1vw, 14px);
+}
+
+/* 컬럼 래퍼: inline-block 공백 제거 */
+.f-columns{ font-size: 0; }
+
+/* 컬럼 5등분 */
+.f-col{
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;                 /* 항상 5열 */
+  padding-right: 1.5%;
+  box-sizing: border-box;
+  font-size: clamp(12px, 1vw, 14px); /* 부모 0 해제 */
+  line-height: 1.6;
+  margin-bottom: 2vw;
+}
+
+.f-col h4{
+  margin: 0 0 .6rem;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 700;
+}
+.f-col h5{
+  margin: 1.2rem 0 .4rem;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 700;
+}
+.f-col ul{ margin: 0; padding: 0; list-style: none; }
+.f-col li{ margin: 0; padding: 0; }
+.f-col a{
+  display: block;
+  padding: .2rem 0;
+  color: #333;
+  text-decoration: none;
+}
+
+/* 안내문 */
+.f-shopnote{
+  margin-top: 1.6vw;
+  color: #555;
+  font-size: clamp(12px, 1vw, 13px);
+}
+.f-shopnote a{ text-decoration: underline; }
+
+/* 구분선 */
+.f-sep{
+  margin: 1.6vw 0;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+}
+
+/* 하단 라인 */
+.f-legal{
+  font-size: 0;               /* inline 공백 제거 */
+  color: #666;
+}
+.f-legal .copy,
+.f-legal .locale{
+  display: inline-block;
+  font-size: clamp(11px, .9vw, 13px);
+  vertical-align: middle;
+}
+.f-legal .copy{ margin-right: 1.2rem; }
+.f-legal .locale{ float: right; }
+
+.f-legal-links{
+  display: inline-block;
+  font-size: clamp(11px, .9vw, 13px);
+  margin: 0; padding: 0;
+}
+.f-legal-links li{
+  display: inline;
+}
+.f-legal-links li + li::before{
+  content: " | ";
+  color: #bbb;
+  margin: 0 .5rem;
+}
+
+/* 작은 화면에서 2열 → 1열로 (옵션) */
+@media (max-width: 960px){
+  .f-col{ width: 33.3333%; }
+}
+@media (max-width: 640px){
+  .f-col{ width: 50%; }
+  .f-legal .locale{ float: none; display: block; margin-top: .6rem; }
+}
+@media (max-width: 420px){
+  .f-col{ width: 100%; }
+}
