@@ -41,8 +41,13 @@
 
 
 /* ✅ 390px 이상일 때 → 2개씩 (50%) */
-@media (max-width: 390px){
+@media (max-width: 950px){
   .ul-difference li{
-    width: 50%;
+    width: 35%;
+    margin-bottom: 1vw;
+    
   }
+  .difference h3{
+  margin-bottom: 2vw;
+}
 }
