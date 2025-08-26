@@ -38,3 +38,11 @@
   height: auto;
   object-fit: contain;
 }
+
+
+/* ✅ 390px 이상일 때 → 2개씩 (50%) */
+@media (max-width: 390px){
+  .ul-difference li{
+    width: 50%;
+  }
+}

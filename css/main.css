@@ -1,47 +1,102 @@
 @charset "utf-8";
 
 /* ========== Reset ========== */
-* { 
-  margin: 0; 
-  padding: 0; 
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
- }
-
- 
-ul { 
-  list-style: none;
- }
-a { 
-  text-decoration: none; 
-  color: #333; 
 }
 
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.fix-menu-wrap {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 99999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-btn span {
+  position: absolute;
+  background-color: #fff;
+  top: 34px;
+  left: -186px;
+  padding: 8px 10px;
+  border-radius: 23px;
+  text-align: center;
+  box-shadow: 0px 3px 7px 0 rgb(0, 0, 0, 0.3);
+  display: none;
+}
+
+.chat-btn:hover span {
+  display: block;
+}
+
+.shop-btn {
+  position: relative;
+  display: block;
+  width: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0px 3px 7px 0 rgb(0, 0, 0, 0.3);
+}
+.top-btn {
+  width: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  background-color: #ed1c24;
+  text-align: center;
+  box-shadow: 0px 3px 7px 0 rgb(0, 0, 0, 0.3);
+  display: none;
+}
+
+
 /* 페이지 래퍼(가로 넘침 차단) */
-.wrap { overflow-x: clip; }
+.wrap {
+  overflow-x: clip;
+}
 
 /* ========== Layout ========== */
 /* 공통 inner: 중앙 정렬 (좌우 폭은 프로젝트 스타일에 맞게 80vw) */
 .inner {
-  width: 80vw;           /* 네가 지정한 값 유지 */
-  margin: 0 auto;        /* 가운데 정렬 */
-  overflow: visible;     /* 카드 그림자 안 잘리게 */
+  width: 80vw; /* 네가 지정한 값 유지 */
+  margin: 0 auto; /* 가운데 정렬 */
+  overflow: visible; /* 카드 그림자 안 잘리게 */
 }
 
 /* 섹션 타이틀은 좌마진 제거 (inner가 정렬 담당) */
-section h3 { margin-left: 0; }
+section h3 {
+  margin-left: 0;
+}
 
 /* ========== Swiper 공통 ========== */
 /* 컨테이너는 화면 폭 100%로, 프레임 밖은 잘라서 3.5개처럼 보이지 않게 */
 .swiper {
   width: 100%;
-  overflow: hidden;      /* ★ 핵심: 컨테이너가 딱 잘라줌 */
+  overflow: hidden; /* ★ 핵심: 컨테이너가 딱 잘라줌 */
   margin: 0;
-  padding: 0;            /* 좌우 여유 필요하면 0 8px; + margin:0 -8px; 세트로 사용 */
+  padding: 0; /* 좌우 여유 필요하면 0 8px; + margin:0 -8px; 세트로 사용 */
 }
 
 /* 래퍼/슬라이드는 그림자나 포커스 링이 보이도록 허용 */
 .swiper .swiper-wrapper,
-.swiper .swiper-slide { overflow: visible; }
+.swiper .swiper-slide {
+  overflow: visible;
+}
 
 /* 각 슬라이드 기본 형태 */
 .swiper-slide {
@@ -58,14 +113,76 @@ section h3 { margin-left: 0; }
   text-decoration: none;
 }
 .swiper-slide > a:focus-visible {
-  outline: 2px solid rgba(0,0,0,.25);
+  outline: 2px solid rgba(0, 0, 0, 0.25);
   outline-offset: 4px;
 }
 
 /* 슬라이드 이미지: 비율 유지 */
 .swiper-slide img {
   width: 100%;
-  height: auto;      /* 이미지 원본 비율 유지 */
-  display: block;    /* 인라인 갭 제거 */
+  height: auto; /* 이미지 원본 비율 유지 */
+  display: block; /* 인라인 갭 제거 */
 }
 
+/* 모달창 */
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999999;
+}
+
+.modal-main {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  min-width: 290px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 30px;
+  padding-top: 150px;
+}
+
+.modal-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  background-color: aquamarine;
+  background: url("../images/chat-btn.png") no-repeat center #8aff03;
+}
+
+.modal-notice {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.modal-notice strong {
+  color: #ed1c24;
+  background: linear-gradient(to top, yellow 50%, transparent 50%);
+}
+
+.modal-notice span {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.modal-close {
+  background-color: #d8d8d8;
+  padding: 15px;
+  border-radius: 0 0 30px 30px;
+}
