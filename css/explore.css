@@ -2,17 +2,25 @@
     margin-top: 8vw;
 }
 
-
-.products{
-    display: flex;
-    margin: 1vw auto;
-    width: 85vw;
-    gap: 3vw;
-}
-
 .explore h3{
     margin-left: 7.5vw;
     font-size: clamp(16px, 2vw, 35px);
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;            /* 여러 줄 허용 */
+    justify-content: center;    /* 남는 공간 가운데 */
+    margin: 1vw auto;
+    width: 85vw;
+    gap: 3vw;                   /* 카드 간격 */
+    padding: 0;
+    list-style: none;
+}
+
+.products li{
+    flex: 0 1 100%;             /* 기본: 모바일에서는 한 줄에 하나 */
+    text-align: center;
 }
 
 .products img{
@@ -20,7 +28,6 @@
 }
 
 .products a{
-    text-align: center;
     display: block;
     font-size: clamp(15px, 2.5vw, 30px);
 }
@@ -29,23 +36,17 @@
     margin-top: 1vw;
 }
 
-/* 공통 */
-.products {
-  text-align: center;   /* 아이템 전체 가운데 정렬 */
-  margin: 0 auto;
-  padding: 0;
-  font-size: 0;         /* inline-block 사이 여백 제거 */
+/* ✅ 390px 이상: 3-2 배열 (첫 줄 3개, 다음 줄 2개) */
+@media (min-width:390px) {
+    .products li{
+        flex: 0 1 calc((100% - 2 * 3vw) / 3); /* 3칸 기준 */
+    }
+    /* 마지막 2개는 자동으로 2개만 남아서 중앙 정렬됨 */
 }
 
-.products li {
-  display: inline-block; /* 옆으로 나란히 */
-  font-size: 16px;       /* 글자 크기 복원 */
-  margin: 10px 5px;      /* 간격 */
-  vertical-align: top;
+/* ✅ 768px 이상: 항상 3개씩 */
+@media (min-width:768px) {
+    .products li{
+        flex: 0 1 calc((100% - 2 * 3vw) / 3);
+    }
 }
-
-/* 기본 (390 미만) → 한 줄에 1개 */
-.products li {
-  width: 90%;
-}
-
