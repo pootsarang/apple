@@ -88,4 +88,20 @@ window.addEventListener("load", function () {
       });
     });
   }
+
+  const searchBtn = this.document.querySelector(".fa-magnifying-glass");
+  const searchMenu = this.document.querySelector(".search-page");
+  const closeBtn = this.document.querySelector(".closeBtn");
+  const searchBtn2 = this.document.querySelector(".searchBtn2");
+  const input = this.document.querySelector("#search");
+
+  searchBtn.addEventListener("click", function () {
+    searchMenu.classList.add("open");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    searchMenu.classList.remove("open");
+  });
+
+  searchBtn2.addEventListener("click", function () {});
 });

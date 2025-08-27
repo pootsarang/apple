@@ -30,7 +30,7 @@ a{
 .chat-btn span {
   position: absolute;
   background-color: #fff;
-  top: 34px;
+  top: 15px;
   left: -186px;
   padding: 8px 10px;
   border-radius: 23px;
@@ -38,7 +38,6 @@ a{
   box-shadow: 0px 3px 7px 0 rgb(0, 0, 0, 0.3);
   display: none;
 }
-
 .chat-btn:hover span {
   display: block;
 }
@@ -59,8 +58,8 @@ a{
   width: 55px;
   line-height: 55px;
   border-radius: 50%;
-  background-color: #ed1c24;
-  text-align: center;
+  background-color: #808080;
+    text-align: center;
   box-shadow: 0px 3px 7px 0 rgb(0, 0, 0, 0.3);
   display: none;
 }
@@ -112,3 +111,55 @@ a{
   text-align: center; /* 안에 글자를 가운데 */
     
 }
+
+.chat-btn{
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.chat-btn img{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .fix-menu-wrap{
+    display: none !important;
+  }
+}
+
+.search-page{
+  display: none;
+  background-color: #808080;
+  padding: 5%;
+  position: relative;
+}
+
+.search-page.open{
+  display: block;
+  background-color: #808080;
+}
+
+#search{
+  padding: 1vw;
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.closeBtn{
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+  color: rgb(189, 189, 189);
+}
+
+.searchBtn2{
+  position: absolute;
+  top: 50%;
+  right: 18%;
+  transform: translateY(-50%);
+ color: rgb(189, 189, 189);
+}
+

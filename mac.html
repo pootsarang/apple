@@ -12,13 +12,13 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/mac.css" />
-    <script src="main.js"></script>
+    <script src="js/apple.js"></script>
   </head>
   <body>
     <!-- 픽스 메뉴 -->
     <div class="fix-menu-wrap">
       <a href="#" class="chat-btn">
-        <img src="./images/chat-btn.png" alt="chat btn" />
+        <img src="./images/rainbowapple.png" alt="chat btn" />
         <span>무엇을 도와드릴까요?</span>
       </a>
       <a href="#" class="shop-btn">Apple</a>
@@ -26,15 +26,20 @@
         <img src="./images/top-btn.png" alt="top btn" class="top-btn-img" />
       </a>
     </div>
+
     <div class="mac-wrap">
       <header class="header">
         <div class="header-nav">
-          <p><a href="apple.html"><i class="fa-brands fa-apple"></i></a></p>
+          <p>
+            <a href="apple.html"><i class="fa-brands fa-apple"></i></a>
+          </p>
           <p><a href="index.html" id="header-store">스토어</a></p>
           <p><a href="mac.html" id="header-mac">Mac</a></p>
           <p><a href="iphone.html" id="header-iphone">iPhone</a></p>
           <p><a href="ipad.html" id="header-ipad">iPad</a></p>
-          <p><a href="applewatch.html" id="header-applewatch">Apple Watch</a></p>
+          <p>
+            <a href="applewatch.html" id="header-applewatch">Apple Watch</a>
+          </p>
           <p><a href="airpods.html" id="header-airpods">AirPods</a></p>
           <p>
             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -43,95 +48,119 @@
             <a href="bag.html"><i class="fa-solid fa-bag-shopping"></i></a>
           </p>
         </div>
+        <div class="search-page">
+          <label for="search"></label>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="apple.com에서 검색하세요"
+          />
 
+          <a href="#" class="closeBtn">닫기</a>
+        </div>
       </header>
 
       <section class="lineup">
-  <div class="inner">
-    <!-- 헤더: 타이틀 / 우측 링크 / 탭 -->
-    <div class="lu-head">
-      <h3 class="lu-title">라인업 살펴보기.</h3>
-      <a href="#" class="lu-all">전체 모델 비교하기 <span aria-hidden="true">›</span></a>
+        <div class="inner">
+          <!-- 헤더: 타이틀 / 우측 링크 / 탭 -->
+          <div class="lu-head">
+            <h3 class="lu-title">라인업 살펴보기.</h3>
+            <a href="#" class="lu-all"
+              >전체 모델 비교하기 <span aria-hidden="true">›</span></a
+            >
 
-      <ul class="lu-tabs">
-        <li><a href="mac.html" class="is-active">노트북</a></li>
-        <li><a href="desktop.html">데스크탑</a></li>
-        <li><a href="#">디스플레이</a></li>
-      </ul>
-    </div>
-
-    <!-- 카드+스펙 2세트 -->
-    <div class="lu-columns">
-      <!-- 왼쪽 묶음 -->
-      <div class="lu-col">
-        <div class="lu-item">
-          <div class="lu-img">
-            <img src="./images/macbook1.png" alt="MacBook Air" />
+            <ul class="lu-tabs">
+              <li><a href="mac.html" class="is-active">노트북</a></li>
+              <li><a href="desktop.html">데스크탑</a></li>
+              <li><a href="#">디스플레이</a></li>
+            </ul>
           </div>
-          <h4 class="lu-name">MacBook Air 13 및 15</h4>
-          <p class="lu-sub">M4 칩</p>
-          <p class="lu-desc">
-            어디서든 일하고, 즐기고, 창작할 수 있도록 해주는<br />
-            놀랍도록 얇고 빠른 노트북.
-          </p>
-          <p class="lu-price">₩1,590,000부터</p>
-          <div class="lu-cta">
-            <a href="#" class="btn primary">더 알아보기</a>
-            <a href="#" class="btn link">구입하기 ›</a>
+
+          <!-- 카드+스펙 2세트 -->
+          <div class="lu-columns">
+            <!-- 왼쪽 묶음 -->
+            <div class="lu-col">
+              <div class="lu-item">
+                <div class="lu-img">
+                  <img src="./images/macbook1.png" alt="MacBook Air" />
+                </div>
+                <h4 class="lu-name">MacBook Air 13 및 15</h4>
+                <p class="lu-sub">M4 칩</p>
+                <p class="lu-desc">
+                  어디서든 일하고, 즐기고, 창작할 수 있도록 해주는<br />
+                  놀랍도록 얇고 빠른 노트북.
+                </p>
+                <p class="lu-price">₩1,590,000부터</p>
+                <div class="lu-cta">
+                  <a href="#" class="btn primary">더 알아보기</a>
+                  <a href="#" class="btn link">구입하기 ›</a>
+                </div>
+              </div>
+
+              <hr class="lu-sep" />
+
+              <div class="lu-spec">
+                <p class="spec-title">34.5cm 또는 38.9cm</p>
+                <p class="spec-sub">13″ 또는 15″ Liquid Retina 디스플레이</p>
+                <p class="spec-chip"><span class="chip">M4</span></p>
+                <p class="spec-ai">Apple Intelligence</p>
+                <p class="spec-battery">
+                  <strong>18시간</strong><br />동영상 재생
+                </p>
+                <p class="spec-ports">
+                  <strong>4개 포트</strong><br />Thunderbolt / USB-C, 헤드폰,
+                  MagSafe
+                </p>
+                <p class="spec-weight">1.24kg 또는 1.51kg<br />무게</p>
+              </div>
+            </div>
+
+            <!-- 오른쪽 묶음 -->
+            <div class="lu-col">
+              <div class="lu-item">
+                <div class="lu-img">
+                  <img src="./images/macbook2.png" alt="MacBook Pro" />
+                </div>
+                <h4 class="lu-name">MacBook Pro 14 및 16</h4>
+                <p class="lu-sub">M4, M4 Pro 또는 M4 Max 칩</p>
+                <p class="lu-desc">
+                  막대한 워크플로도 너끈히 처리하는<br />
+                  가장 앞선 Mac 노트북.
+                </p>
+                <p class="lu-price">₩2,390,000부터</p>
+                <div class="lu-cta">
+                  <a href="#" class="btn primary">더 알아보기</a>
+                  <a href="#" class="btn link">구입하기 ›</a>
+                </div>
+              </div>
+
+              <hr class="lu-sep" />
+
+              <div class="lu-spec">
+                <p class="spec-title">35.9cm 또는 41.0cm</p>
+                <p class="spec-sub">
+                  14″ 또는 16″ Liquid Retina XDR 디스플레이
+                </p>
+                <p class="spec-chip">
+                  <span class="chip">M4</span>
+                  <span class="chip">M4 Pro</span>
+                  <span class="chip">M4 Max</span>
+                </p>
+                <p class="spec-ai">Apple Intelligence</p>
+                <p class="spec-battery">
+                  <strong>24시간</strong><br />동영상 재생
+                </p>
+                <p class="spec-ports">
+                  <strong>7개 포트</strong><br />Thunderbolt / USB-C 3개, HDMI,
+                  SDXC, 헤드폰, MagSafe
+                </p>
+                <p class="spec-weight">1.55kg 또는 2.14kg<br />무게</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        <hr class="lu-sep" />
-
-        <div class="lu-spec">
-          <p class="spec-title">34.5cm 또는 38.9cm</p>
-          <p class="spec-sub">13″ 또는 15″ Liquid Retina 디스플레이</p>
-          <p class="spec-chip"><span class="chip">M4</span></p>
-          <p class="spec-ai">Apple Intelligence</p>
-          <p class="spec-battery"><strong>18시간</strong><br />동영상 재생</p>
-          <p class="spec-ports"><strong>4개 포트</strong><br />Thunderbolt / USB-C, 헤드폰, MagSafe</p>
-          <p class="spec-weight">1.24kg 또는 1.51kg<br />무게</p>
-        </div>
-      </div>
-
-      <!-- 오른쪽 묶음 -->
-      <div class="lu-col">
-        <div class="lu-item">
-          <div class="lu-img">
-            <img src="./images/macbook2.png" alt="MacBook Pro" />
-          </div>
-          <h4 class="lu-name">MacBook Pro 14 및 16</h4>
-          <p class="lu-sub">M4, M4 Pro 또는 M4 Max 칩</p>
-          <p class="lu-desc">
-            막대한 워크플로도 너끈히 처리하는<br />
-            가장 앞선 Mac 노트북.
-          </p>
-          <p class="lu-price">₩2,390,000부터</p>
-          <div class="lu-cta">
-            <a href="#" class="btn primary">더 알아보기</a>
-            <a href="#" class="btn link">구입하기 ›</a>
-          </div>
-        </div>
-
-        <hr class="lu-sep" />
-
-        <div class="lu-spec">
-          <p class="spec-title">35.9cm 또는 41.0cm</p>
-          <p class="spec-sub">14″ 또는 16″ Liquid Retina XDR 디스플레이</p>
-          <p class="spec-chip">
-            <span class="chip">M4</span>
-            <span class="chip">M4 Pro</span>
-            <span class="chip">M4 Max</span>
-          </p>
-          <p class="spec-ai">Apple Intelligence</p>
-          <p class="spec-battery"><strong>24시간</strong><br />동영상 재생</p>
-          <p class="spec-ports"><strong>7개 포트</strong><br />Thunderbolt / USB-C 3개, HDMI, SDXC, 헤드폰, MagSafe</p>
-          <p class="spec-weight">1.55kg 또는 2.14kg<br />무게</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section class="terms">
         <div class="inner">
@@ -174,135 +203,134 @@
       <!-- 하단 메뉴 전체 -->
       <!-- FOOTER -->
       <section class="footer">
-  <div class="inner">
+        <div class="inner">
+          <!-- 상단 카테고리 컬럼들 -->
+          <div class="f-columns">
+            <!-- 1 -->
+            <div class="f-col">
+              <h4>쇼핑 및 알아보기</h4>
+              <ul>
+                <li><a href="index.html">스토어</a></li>
+                <li><a href="mac.html">Mac</a></li>
+                <li><a href="ipad.html">iPad</a></li>
+                <li><a href="iphone.html">iPhone</a></li>
+                <li><a href="applewatch.html">Watch</a></li>
+                <li><a href="#">Vision</a></li>
+                <li><a href="#">AirPods</a></li>
+                <li><a href="#">TV 및 홈</a></li>
+                <li><a href="#">AirTag</a></li>
+                <li><a href="#">액세서리</a></li>
+              </ul>
 
-    <!-- 상단 카테고리 컬럼들 -->
-    <div class="f-columns">
-      <!-- 1 -->
-      <div class="f-col">
-        <h4>쇼핑 및 알아보기</h4>
-        <ul>
-          <li><a href="index.html">스토어</a></li>
-          <li><a href="mac.html">Mac</a></li>
-          <li><a href="ipad.html">iPad</a></li>
-          <li><a href="iphone.html">iPhone</a></li>
-          <li><a href="applewatch.html">Watch</a></li>
-          <li><a href="#">Vision</a></li>
-          <li><a href="#">AirPods</a></li>
-          <li><a href="#">TV 및 홈</a></li>
-          <li><a href="#">AirTag</a></li>
-          <li><a href="#">액세서리</a></li>
-        </ul>
+              <h5>Apple 지갑</h5>
+              <ul>
+                <li><a href="#">지갑</a></li>
+                <li><a href="#">Apple&nbsp;Pay</a></li>
+              </ul>
+            </div>
 
-        <h5>Apple 지갑</h5>
-        <ul>
-          <li><a href="#">지갑</a></li>
-          <li><a href="#">Apple&nbsp;Pay</a></li>
-        </ul>
-      </div>
+            <!-- 2 -->
+            <div class="f-col">
+              <h4>계정</h4>
+              <ul>
+                <li><a href="#">Apple 계정 관리</a></li>
+                <li><a href="#">Apple Store 계정</a></li>
+                <li><a href="#">iCloud.com</a></li>
+              </ul>
 
-      <!-- 2 -->
-      <div class="f-col">
-        <h4>계정</h4>
-        <ul>
-          <li><a href="#">Apple 계정 관리</a></li>
-          <li><a href="#">Apple Store 계정</a></li>
-          <li><a href="#">iCloud.com</a></li>
-        </ul>
+              <h5>엔터테인먼트</h5>
+              <ul>
+                <li><a href="#">Apple One</a></li>
+                <li><a href="#">Apple TV+</a></li>
+                <li><a href="#">Apple Music</a></li>
+                <li><a href="#">Apple Arcade</a></li>
+                <li><a href="#">Apple 팟캐스트</a></li>
+                <li><a href="#">Apple Books</a></li>
+                <li><a href="#">App Store</a></li>
+              </ul>
+            </div>
 
-        <h5>엔터테인먼트</h5>
-        <ul>
-          <li><a href="#">Apple One</a></li>
-          <li><a href="#">Apple TV+</a></li>
-          <li><a href="#">Apple Music</a></li>
-          <li><a href="#">Apple Arcade</a></li>
-          <li><a href="#">Apple 팟캐스트</a></li>
-          <li><a href="#">Apple Books</a></li>
-          <li><a href="#">App Store</a></li>
-        </ul>
-      </div>
+            <!-- 3 -->
+            <div class="f-col">
+              <h4>Apple Store</h4>
+              <ul>
+                <li><a href="#">매장 찾기</a></li>
+                <li><a href="#">Genius Bar</a></li>
+                <li><a href="#">Today at Apple</a></li>
+                <li><a href="#">그룹 예약</a></li>
+                <li><a href="#">Apple 캠프</a></li>
+                <li><a href="#">Apple Store 앱</a></li>
+                <li><a href="#">인증 리퍼비쉬 제품</a></li>
+                <li><a href="#">Apple Trade&nbsp;In</a></li>
+                <li><a href="#">할부 방식</a></li>
+                <li><a href="#">주문 상태</a></li>
+                <li><a href="#">쇼핑 도움말</a></li>
+              </ul>
+            </div>
 
-      <!-- 3 -->
-      <div class="f-col">
-        <h4>Apple Store</h4>
-        <ul>
-          <li><a href="#">매장 찾기</a></li>
-          <li><a href="#">Genius Bar</a></li>
-          <li><a href="#">Today at Apple</a></li>
-          <li><a href="#">그룹 예약</a></li>
-          <li><a href="#">Apple 캠프</a></li>
-          <li><a href="#">Apple Store 앱</a></li>
-          <li><a href="#">인증 리퍼비쉬 제품</a></li>
-          <li><a href="#">Apple Trade&nbsp;In</a></li>
-          <li><a href="#">할부 방식</a></li>
-          <li><a href="#">주문 상태</a></li>
-          <li><a href="#">쇼핑 도움말</a></li>
-        </ul>
-      </div>
+            <!-- 4 -->
+            <div class="f-col">
+              <h4>비즈니스</h4>
+              <ul>
+                <li><a href="#">Apple과 비즈니스</a></li>
+                <li><a href="#">비즈니스를 위한 제품 쇼핑하기</a></li>
+              </ul>
 
-      <!-- 4 -->
-      <div class="f-col">
-        <h4>비즈니스</h4>
-        <ul>
-          <li><a href="#">Apple과 비즈니스</a></li>
-          <li><a href="#">비즈니스를 위한 제품 쇼핑하기</a></li>
-        </ul>
+              <h5>교육</h5>
+              <ul>
+                <li><a href="#">Apple과 교육</a></li>
+                <li><a href="#">초중고용 제품 쇼핑하기</a></li>
+                <li><a href="#">대학 생활 제품 쇼핑하기</a></li>
+              </ul>
+            </div>
 
-        <h5>교육</h5>
-        <ul>
-          <li><a href="#">Apple과 교육</a></li>
-          <li><a href="#">초중고용 제품 쇼핑하기</a></li>
-          <li><a href="#">대학 생활 제품 쇼핑하기</a></li>
-        </ul>
-      </div>
+            <!-- 5 -->
+            <div class="f-col">
+              <h4>Apple의 가치관</h4>
+              <ul>
+                <li><a href="#">손쉬운 사용</a></li>
+                <li><a href="#">교육</a></li>
+                <li><a href="#">환경</a></li>
+                <li><a href="#">개인정보 보호</a></li>
+                <li><a href="#">공급망 혁신</a></li>
+              </ul>
 
-      <!-- 5 -->
-      <div class="f-col">
-        <h4>Apple의 가치관</h4>
-        <ul>
-          <li><a href="#">손쉬운 사용</a></li>
-          <li><a href="#">교육</a></li>
-          <li><a href="#">환경</a></li>
-          <li><a href="#">개인정보 보호</a></li>
-          <li><a href="#">공급망 혁신</a></li>
-        </ul>
+              <h5>Apple 정보</h5>
+              <ul>
+                <li><a href="#">Newsroom</a></li>
+                <li><a href="#">Apple 리더십</a></li>
+                <li><a href="#">채용 안내</a></li>
+                <li><a href="#">윤리 및 규정 준수</a></li>
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">일자리 창출</a></li>
+                <li><a href="#">Apple 연락처</a></li>
+              </ul>
+            </div>
+          </div>
 
-        <h5>Apple 정보</h5>
-        <ul>
-          <li><a href="#">Newsroom</a></li>
-          <li><a href="#">Apple 리더십</a></li>
-          <li><a href="#">채용 안내</a></li>
-          <li><a href="#">윤리 및 규정 준수</a></li>
-          <li><a href="#">이벤트</a></li>
-          <li><a href="#">일자리 창출</a></li>
-          <li><a href="#">Apple 연락처</a></li>
-        </ul>
-      </div>
-    </div>
+          <!-- 안내 문장 -->
+          <p class="f-shopnote">
+            다양한 쇼핑 방법: <a href="#">Apple Store를 방문</a>하거나,
+            <a href="#">리셀러</a>를 찾아보거나,
+            <a href="tel:080-330-8877">080-330-8877</a>번으로 전화하세요.
+          </p>
 
-    <!-- 안내 문장 -->
-    <p class="f-shopnote">
-      다양한 쇼핑 방법: <a href="#">Apple Store를 방문</a>하거나, <a href="#">리셀러</a>를 찾아보거나,
-      <a href="tel:080-330-8877">080-330-8877</a>번으로 전화하세요.
-    </p>
+          <hr class="f-sep" />
 
-    <hr class="f-sep">
-
-    <!-- 하단 저작권/링크 -->
-    <div class="f-legal">
-      <p class="copy">Copyright © 2025 Apple Inc. 모든 권리 보유.</p>
-      <ul class="f-legal-links">
-        <li><a href="#">개인정보 처리방침</a></li>
-        <li><a href="#">웹 사이트 이용 약관</a></li>
-        <li><a href="#">판매 및 환불</a></li>
-        <li><a href="#">법적 고지</a></li>
-        <li><a href="#">사이트 맵</a></li>
-      </ul>
-      <p class="locale">대한민국</p>
-    </div>
-
-  </div>
-</section>
+          <!-- 하단 저작권/링크 -->
+          <div class="f-legal">
+            <p class="copy">Copyright © 2025 Apple Inc. 모든 권리 보유.</p>
+            <ul class="f-legal-links">
+              <li><a href="#">개인정보 처리방침</a></li>
+              <li><a href="#">웹 사이트 이용 약관</a></li>
+              <li><a href="#">판매 및 환불</a></li>
+              <li><a href="#">법적 고지</a></li>
+              <li><a href="#">사이트 맵</a></li>
+            </ul>
+            <p class="locale">대한민국</p>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
