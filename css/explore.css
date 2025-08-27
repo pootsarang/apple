@@ -1,52 +1,57 @@
+:root{
+  --card-gap: clamp(12px, 2.5vw, 28px); /* 카드 간격 */
+}
+
 .explore{
-    margin-top: 8vw;
+  margin-top: 8vw;
 }
 
 .explore h3{
-    margin-left: 7.5vw;
-    font-size: clamp(16px, 2vw, 35px);
+  margin-left: 7.5vw;
+  font-size: clamp(16px, 2vw, 35px);
 }
 
 .products{
-    display: flex;
-    flex-wrap: wrap;            /* 여러 줄 허용 */
-    justify-content: center;    /* 남는 공간 가운데 */
-    margin: 1vw auto;
-    width: 85vw;
-    gap: 3vw;                   /* 카드 간격 */
-    padding: 0;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 85vw;
+  margin: 1vw auto;
+  gap: var(--card-gap);
+  padding: 0;
+  list-style: none;
 }
 
 .products li{
-    flex: 0 1 100%;             /* 기본: 모바일에서는 한 줄에 하나 */
-    text-align: center;
+  text-align: center;
 }
 
-.products img{
-    width: 100%;
+/* ✅ 768px 미만: 3열 고정 */
+@media (max-width: 767px){
+  .products li{
+    flex: 0 1 calc((100% - 2 * var(--card-gap)) / 3);
+  }
+}
+
+/* ✅ 768px 이상: 5열 */
+@media (min-width: 768px){
+  .products li{
+    flex: 0 1 calc((100% - 4 * var(--card-gap)) / 5);
+  }
 }
 
 .products a{
-    display: block;
-    font-size: clamp(15px, 2.5vw, 30px);
+  display: block;
+  font-size: clamp(15px, 2.5vw, 30px);
 }
 
 .products p{
-    margin-top: 1vw;
+  margin-top: 1vw;
 }
 
-/* ✅ 390px 이상: 3-2 배열 (첫 줄 3개, 다음 줄 2개) */
-@media (min-width:390px) {
-    .products li{
-        flex: 0 1 calc((100% - 2 * 3vw) / 3); /* 3칸 기준 */
-    }
-    /* 마지막 2개는 자동으로 2개만 남아서 중앙 정렬됨 */
-}
-
-/* ✅ 768px 이상: 항상 3개씩 */
-@media (min-width:768px) {
-    .products li{
-        flex: 0 1 calc((100% - 2 * 3vw) / 3);
-    }
+.products img{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
